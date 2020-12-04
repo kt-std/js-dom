@@ -12,7 +12,7 @@
 <body class="flex">
 	<header class="header flex">
 		<nav class="nav flex column full">
-			<img class="menu__icon" id="menu-btn" src="assets/menu.svg" alt="Menu button">
+			<div class="menu__icon-container flex full"><img class="menu__icon" id="menu-btn" src="assets/menu.svg" alt="Menu button"></div>
 			<ul class="menu flex column" id="menu">
 				<li class="menu__item flex center full">Mercury</li>
 				<li class="menu__item flex center full">Venus</li>
@@ -22,11 +22,11 @@
 		</nav>
 	</header>
 	<main id="main" class="container">
-		<div class="tab__image"></div>
+		<div class="tab__image" id="tabImage"></div>
 		<div class="tab__number">
-			<span>01</span>
+			<span class="number">01</span>
 			---------
-			<span id="tab__number_right">01</span>
+			<span class="number" id="tab__number_right">01</span>
 		</div>
 		<h1 class="tab__header">Mercury</h1>
 		<p class="tab__paragraph">Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Reprehenderit esse, asperiores quidem at pariatur doloribus odit nobis beatae odio aperiam deleniti et, eaque officia animi velit similique. Voluptate, explicabo, recusandae!</p>

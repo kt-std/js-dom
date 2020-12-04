@@ -1,9 +1,16 @@
 body{
 	flex-direction: column;
 }
-.nav{
+.nav,
+.menu__icon-container{
+	justify-content: flex-end;
 	align-items: flex-end;
 }
+.menu__icon-container{
+	background-color: #1e1e1e;
+	border-bottom: 1px solid #1d1d1d;
+}
+
 .menu {
 	max-height: 0;
 	overflow: hidden;	
@@ -14,14 +21,15 @@ body{
 
 .tab__image{
 	height: 70vh;
-	background: url(../assets/_mars.jpg) center no-repeat;
-	background-size:cover;
+	background: url(../assets/_mercury.jpg) center no-repeat;
+	background-size:cover;	
+	-webkit-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
 }
-
 .menu__item {
-
 	border-bottom: 1px solid #333;
 }
+
 .close{
 	content: '—';
 }
@@ -32,6 +40,10 @@ body{
 }
 .menu__icon {
 	display: block;
+	transition: .5s;
 	width: 25px;
 	height: 25px;
+}
+.menu__icon:hover{
+	filter: drop-shadow(0 0 5px white);
 }

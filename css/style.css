@@ -41,15 +41,22 @@ body{
 	display: none;
 	margin: 15px;
 }
+.menu__item:hover,
 .menu__icon:hover{
 	cursor: pointer;
+}
+
+.menu__item:hover{
+	color:white;
+	text-shadow: 0 0 7px white;
 }
 .menu__item {
 	box-sizing: border-box;
 	text-transform: uppercase;
 	letter-spacing: 0.5em;
 	height: 50px;
-	margin: 0 0 15px 0;
+	transition:  .5s;
+	margin: 5px 0;
 }
 
 .menu__item::before{
@@ -57,7 +64,7 @@ body{
 } 
 
 .menu__item:last-of-type{
-	margin: 0;
+	border:none;
 }
 .column{
 	flex-direction: column;
