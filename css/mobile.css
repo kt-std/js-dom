@@ -1,0 +1,37 @@
+body{
+	flex-direction: column;
+}
+.nav{
+	align-items: flex-end;
+}
+.menu {
+	max-height: 0;
+	overflow: hidden;	
+	width: 80%;
+	margin: auto;
+	transition:  .75s ease-out;
+}
+
+.tab__image{
+	height: 70vh;
+	background: url(../assets/_mars.jpg) center no-repeat;
+	background-size:cover;
+}
+
+.menu__item {
+
+	border-bottom: 1px solid #333;
+}
+.close{
+	content: '—';
+}
+.visible{
+	display: flex;
+	height: auto;
+	max-height: 500px;
+}
+.menu__icon {
+	display: block;
+	width: 25px;
+	height: 25px;
+}
