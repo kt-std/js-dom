@@ -9,8 +9,8 @@ body {
 	align-items: flex-end;
 }
 
-.nav, 
-.header{
+.nav,
+.header {
 	background-color: transparent;
 	padding: 0;
 	margin: 0;
@@ -18,9 +18,11 @@ body {
 	min-width: 100%;
 	max-width: auto;
 }
-.header::after{
+
+.header::after {
 	display: none;
 }
+
 .menu__icon-container {
 	background-color: #1e1e1e;
 	border-bottom: 1px solid #1d1d1d;
@@ -36,7 +38,6 @@ body {
 
 .tab__header {
 	text-align: center;
-
 	margin: 25px 0 10px 0;
 }
 
@@ -56,7 +57,7 @@ body {
 .menu__item {
 	letter-spacing: 5px;
 	justify-content: center;
-	border-bottom: 1px solid #333;	
+	border-bottom: 1px solid #333;
 	margin: 5px 0;
 	height: 50px;
 }
@@ -88,11 +89,13 @@ body {
 	letter-spacing: 6px;
 	margin-bottom: 5px;
 }
-.tab__image{
+
+.tab__image {
 	order: 0;
 	width: 100%;
 }
-.container{
+
+.container {
 	display: block;
 }
 
@@ -109,3 +112,4 @@ body {
 	text-align: justify;
 	margin-bottom: 30px;
 }
+
