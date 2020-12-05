@@ -27,6 +27,7 @@ let CONTENT = [
 	}
 ];
 
+
 document.querySelector("#menu-btn").addEventListener('click', function display(e){
 	document.querySelector("#menu").classList.toggle("visible");
 });
@@ -35,30 +36,46 @@ document.querySelector("#menu").addEventListener('click', function display(e){
 	let sectionName = e.target.innerHTML.toLowerCase(),
 		target = e.target;
 		index = CONTENT.findIndex( el => el.heading.toLowerCase() == sectionName);
-	initializeData(index);
+	setData(index);
 });
 
 let addAnimation = (element, ...animationOptions) => element.animate(...animationOptions);
 
 let updateBackground = (element, path, id) => {
-	element.style.backgroundImage = window.innerWidth < 720 ? `url('${path + "_" + id}.jpg')` : `url('${path + id}.jpg')`;
+	element.style.backgroundImage = window.innerWidth < 800 ? `url('${path + "_" + id}.jpg')` : `url('${path + id}.jpg')`;
 	addAnimation(element, [{opacity: .1},{opacity: 1}], {duration: 500});
 }
 
 let setInnerData = (element, data) => element.innerHTML = data;
 
-let initializeData = (index) => {
+let setData = (index) => {
 	let	image = document.getElementById("tabImage"),
 		heading = document.querySelector(".tab__header"),
+		headerMenu = document.querySelector(".header"),
+		container = document.querySelector(".container"),
 		paragraph = document.querySelector(".tab__paragraph"),
 		period = document.querySelector(".statistics__text"),
 		position = document.querySelector("#position");
+	
 	updateBackground(image, ASSETS_PATH, (CONTENT[index].heading).toLowerCase());
 	setInnerData(heading, CONTENT[index].heading);
 	setInnerData(position, CONTENT[index].position);
 	setInnerData(paragraph, CONTENT[index].paragraph);
+	addAnimation(container,  [{opacity: 0},{opacity: 1}], {duration: (600)});
+	
 	setInnerData(period, CONTENT[index].period);
+	if(window.innerWidth > 800) {
+		updateBackground(headerMenu, ASSETS_PATH, `aside_${(CONTENT[index].heading).toLowerCase()}`)};
 }
+
+window.addEventListener('resize', function(e){
+	let image = document.querySelector(".header");
+	if(window.innerWidth < 800){
+		image.style.backgroundImage = 'none';
+	}else{
+		updateBackground(image, ASSETS_PATH, `aside_${(document.querySelector(".tab__header").textContent).toLowerCase()}`);
+	}
+});
 
 let renderContent = (data) => {
 	let menu = document.getElementById('menu'),
@@ -69,7 +86,7 @@ let renderContent = (data) => {
 		let listItem = document.createElement('li');
 		listItem.classList.add(...listItemClasses);
 		listItem.textContent = `${element.heading}`;
-		listItem.setAttribute('data-content', `—  ${element.position} — `);
+		listItem.setAttribute('data-content', `— ${element.position} —`);
 		listItem.setAttribute('tabindex', `1`);
 		fragment.appendChild(listItem);
 	});
@@ -78,4 +95,5 @@ let renderContent = (data) => {
 
 
 renderContent(CONTENT);
-initializeData(0);
+
+setData(0);

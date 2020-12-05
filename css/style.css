@@ -6,12 +6,12 @@ li{
 	list-style: none;
 }
 body{
-	background-color: #222;
+	background-color: #111;
 	min-height: 100vh;
 	color: #888;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
-	font-size: 16px;
+	font-size: 15px;
 	line-height: 1.5;
 }
 .flex{
@@ -31,11 +31,24 @@ body{
 
 .number{
 	font-weight: 600;
+	font-size: .9em;
 }
 .header{
+	justify-content: flex-start;
+	position: relative;
+	height: auto;
+	min-height: 100vh;
+	/*border: 1px solid green;*/
+	max-width: 350px;
+	background-position: center;
+	background-size: cover; 
 }
 .nav {
-	
+	padding: 0 40px;
+	width: 100%;
+	min-width: 200px;
+	height: 100%;
+	background-color: rgba(0,0,0,.6);
 }
 .menu {
 }
@@ -54,17 +67,28 @@ body{
 	text-shadow: 0 0 7px white;
 }
 .menu__item {
+	font-size: .8em;
+	color: white;
 	box-sizing: border-box;
 	text-transform: uppercase;
 	letter-spacing: 0.5em;
-	height: 50px;
+	justify-content: flex-start;
+	height: 30px;
 	transition:  .5s;
-	margin: 5px 0;
+	margin: 0;
+}
+.tab__image{
+	order: 1;
+	background-position: left;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
 }
 
 
 .menu__item::before{
 	content: attr(data-content);
+	margin-right: 10px;
 } 
 
 .menu__item:last-of-type{
@@ -73,15 +97,16 @@ body{
 .column{
 	flex-direction: column;
 }
-.container {
-}
+
 .separator{
 	height: 0;
-	width: 40px;
+	width: 30px;
 	margin: 0 10px; 
 	border-bottom: 1px solid white;
 }
 .tab__number {
+	font-size: 0.75em;
+	margin-top: 20%;
 	align-items: center;
 }
 .tab__header {
@@ -95,26 +120,24 @@ body{
 	font-size: 1.5em;
 }
 .tab__info-container{
-	margin: 15px;
+	border-left: 1px solid #222;
+	border-right: 1px solid #222;
+	box-sizing: border-box;
+	min-width: 350px;
+	padding: 30px;
+	margin: 0;
+	justify-content: space-between;
+	max-width: 400px;
 }
 .tab__paragraph {
-	text-align: justify;
-	margin-bottom: 30px;
+	width: 100%;
 }
-.tab__statistics {
-	text-transform: uppercase;
-	display: flex;
-	flex-direction: row;
-	align-content: center;
-	align-items: center;
-	justify-content: space-between;
-	font-size: .5em;
-	letter-spacing: 6px;
 
-	margin-bottom: 5px;
+.statistics__header{
+	letter-spacing: 2px;
+	font-size: 1em;
+	text-transform: uppercase;
 }
-.statistics__header::before {
-}
-.statistics__text {
-	font-size: 12px;
-}
+.tab__statistics{
+	flex-direction: column;
+}	

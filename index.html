@@ -10,24 +10,26 @@
 	<title>JS DOM</title>
 </head>
 <body class="flex">
-	<header class="header flex">
-		<nav class="nav flex column full">
+	<header class="header flex center">
+		<nav class="nav flex column full center">
 			<div class="menu__icon-container flex full">
 				<img class="menu__icon" id="menu-btn" src="assets/menu.svg" alt="Menu button">
 			</div>
 			<ul class="menu flex column" id="menu"></ul>
 		</nav>
 	</header>
-	<main id="main" class="container flex column">
+	<main id="main" class="container flex">
 		<div class="tab__image" id="tabImage"></div>
-		<section class="tab__info-container">
-			<div class="tab__number flex">
-				<span class="number">01</span>
-				<span class="separator"></span>
-				<span class="number" id="position"></span>
+		<section class="tab__info-container flex column">
+			<div>
+				<div class="tab__number flex">
+					<span class="number">01</span>
+					<span class="separator"></span>
+					<span class="number" id="position"></span>
+				</div>
+				<h1 class="tab__header"></h1>
+				<p class="tab__paragraph"></p>
 			</div>
-			<h1 class="tab__header"></h1>
-			<p class="tab__paragraph"></p>
 			<div class="tab__statistics flex">
 				<h2 class="statistics__header">Orbital period</h2>
 				<p class="statistics__text"></p>
