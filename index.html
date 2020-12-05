@@ -5,35 +5,34 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
-	<link rel="stylesheet" media="screen and (min-width:300px) and (max-width: 600px)" href="css/mobile.css">
-	<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+	<link rel="stylesheet" media="screen and (min-width:300px) and (max-width: 800px)" href="css/mobile.css">
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@300;600&display=swap" rel="stylesheet"> 
 	<title>JS DOM</title>
 </head>
 <body class="flex">
 	<header class="header flex">
 		<nav class="nav flex column full">
-			<div class="menu__icon-container flex full"><img class="menu__icon" id="menu-btn" src="assets/menu.svg" alt="Menu button"></div>
-			<ul class="menu flex column" id="menu">
-				<li class="menu__item flex center full">Mercury</li>
-				<li class="menu__item flex center full">Venus</li>
-				<li class="menu__item flex center full">Earth</li>
-				<li class="menu__item flex center full">Mars</li>
-			</ul>
+			<div class="menu__icon-container flex full">
+				<img class="menu__icon" id="menu-btn" src="assets/menu.svg" alt="Menu button">
+			</div>
+			<ul class="menu flex column" id="menu"></ul>
 		</nav>
 	</header>
-	<main id="main" class="container">
+	<main id="main" class="container flex column">
 		<div class="tab__image" id="tabImage"></div>
-		<div class="tab__number">
-			<span class="number">01</span>
-			---------
-			<span class="number" id="tab__number_right">01</span>
-		</div>
-		<h1 class="tab__header">Mercury</h1>
-		<p class="tab__paragraph">Lorem ipsum, dolor, sit amet consectetur adipisicing elit. Reprehenderit esse, asperiores quidem at pariatur doloribus odit nobis beatae odio aperiam deleniti et, eaque officia animi velit similique. Voluptate, explicabo, recusandae!</p>
-		<div class="tab__statistics">
-			<h2 class="statistics__header">Earth days</h2>
-			<p class="statistics__text">Lorem, ipsum dolor sit amet consectetur, adipisicing elit.</p>
-		</div>
+		<section class="tab__info-container">
+			<div class="tab__number flex">
+				<span class="number">01</span>
+				<span class="separator"></span>
+				<span class="number" id="position"></span>
+			</div>
+			<h1 class="tab__header"></h1>
+			<p class="tab__paragraph"></p>
+			<div class="tab__statistics flex">
+				<h2 class="statistics__header">Orbital period</h2>
+				<p class="statistics__text"></p>
+			</div>
+		</section>
 	</main>	
 	<script type="text/javascript" src="js/script.js"></script>
 </body>

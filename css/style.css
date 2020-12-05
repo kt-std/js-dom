@@ -1,7 +1,6 @@
 *{
 	margin: 0;
 	padding:0; 
-	/*border:1px solid yellow;*/
 }
 li{
 	list-style: none;
@@ -9,8 +8,8 @@ li{
 body{
 	background-color: #222;
 	min-height: 100vh;
-	color: #ccc;
-	font-family: 'Lato', sans-serif;
+	color: #888;
+	font-family: 'Roboto', sans-serif;
 	font-weight: 300;
 	font-size: 16px;
 	line-height: 1.5;
@@ -18,7 +17,6 @@ body{
 .flex{
 	display: flex;
 	width: 100%;
-	/*border:2px solid red;*/
 }
 .full{
 	width: 100%;
@@ -29,6 +27,10 @@ body{
 .center{
 	justify-content: center;
 	align-items: center;
+}
+
+.number{
+	font-weight: 600;
 }
 .header{
 }
@@ -45,8 +47,9 @@ body{
 .menu__icon:hover{
 	cursor: pointer;
 }
-
+.menu__item:focus,
 .menu__item:hover{
+	outline: none;
 	color:white;
 	text-shadow: 0 0 7px white;
 }
@@ -59,8 +62,9 @@ body{
 	margin: 5px 0;
 }
 
+
 .menu__item::before{
-	content:'+';
+	content: attr(data-content);
 } 
 
 .menu__item:last-of-type{
@@ -71,19 +75,46 @@ body{
 }
 .container {
 }
+.separator{
+	height: 0;
+	width: 40px;
+	margin: 0 10px; 
+	border-bottom: 1px solid white;
+}
 .tab__number {
+	align-items: center;
 }
 .tab__header {
 	font-size: 3em;	
 	font-weight: 300;
+	text-transform: uppercase;
 	color: white;
-	font-family: 'Cormorant Garamond', Georgia, serif;
+	font-family: 'Playfair Display', serif;
+}
+.tab__header::first-letter{
+	font-size: 1.5em;
+}
+.tab__info-container{
+	margin: 15px;
 }
 .tab__paragraph {
+	text-align: justify;
+	margin-bottom: 30px;
 }
 .tab__statistics {
+	text-transform: uppercase;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+	font-size: .5em;
+	letter-spacing: 6px;
+
+	margin-bottom: 5px;
 }
-.statistics__header {
+.statistics__header::before {
 }
 .statistics__text {
+	font-size: 12px;
 }

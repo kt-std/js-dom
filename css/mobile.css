@@ -16,34 +16,63 @@ body{
 	overflow: hidden;	
 	width: 80%;
 	margin: auto;
-	transition:  .75s ease-out;
+	transition: .75s ease-out;
+}
+.tab__header{
+	text-align: center;
+	margin: 15px 0;
+}
+.tab__image {
+	height: 70vh;
+	background-position: center;
+	background-size:cover;
 }
 
-.tab__image{
-	height: 70vh;
-	background: url(../assets/_mercury.jpg) center no-repeat;
-	background-size:cover;	
-	-webkit-transition: 0.2s ease-in-out;
-	transition: 0.2s ease-in-out;
+.tab__number {
+	margin-top: -45px;
+	font-size: 0.75em;
+	font-weight: 700;
+	opacity: .5;
+	position: relative;
 }
+
 .menu__item {
 	border-bottom: 1px solid #333;
 }
 
-.close{
-	content: '—';
-}
 .visible{
 	display: flex;
 	height: auto;
 	max-height: 500px;
 }
+
 .menu__icon {
 	display: block;
 	transition: .5s;
 	width: 25px;
 	height: 25px;
 }
+
 .menu__icon:hover{
 	filter: drop-shadow(0 0 5px white);
+}
+
+.tab__statistics {
+	text-transform: uppercase;
+	align-content: center;
+	align-items: center;
+	justify-content: space-between;
+	font-size: .5em;
+	letter-spacing: 6px;
+	margin-bottom: 5px;
+}
+
+
+.tab__info-container{
+	margin: 15px;
+}
+
+
+.statistics__text {
+	font-size: 12px;
 }
