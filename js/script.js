@@ -42,7 +42,7 @@ document.querySelector("#menu").addEventListener('click', function display(e){
 let addAnimation = (element, ...animationOptions) => element.animate(...animationOptions);
 
 let updateBackground = (element, path, id) => {
-	element.style.backgroundImage = window.innerWidth < 800 ? `url('${path + "_" + id}.jpg')` : `url('${path + id}.jpg')`;
+	element.style.backgroundImage = window.innerWidth < 800 ? `url('${path + id + "_small"}.jpg')` : `url('${path + id}.jpg')`;
 	addAnimation(element, [{opacity: .1},{opacity: 1}], {duration: 500});
 }
 
@@ -70,7 +70,7 @@ let setData = (index) => {
 
 window.addEventListener('resize', function(e){
 	let image = document.querySelector(".header");
-	if(window.innerWidth < 800){
+	if(window.innerWidth <= 800){
 		image.style.backgroundImage = 'none';
 	}else{
 		updateBackground(image, ASSETS_PATH, `aside_${(document.querySelector(".tab__header").textContent).toLowerCase()}`);
