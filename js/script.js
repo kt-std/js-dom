@@ -1,6 +1,7 @@
 const ASSETS_PATH = 'assets/';
 const SCREEN_WIDTH = 800;
 const menu = document.querySelector('#menu');
+const image = document.querySelector('.header');
 const CONTENT = [
     {
         heading: 'Mercury',
@@ -34,16 +35,12 @@ const CONTENT = [
 
 document
     .querySelector('#menu-btn')
-    .addEventListener('click', function display(e) {
-        menu.classList.toggle('visible');
-    });
+    .addEventListener('click', () => menu.classList.toggle('visible'));
 
-document
-    .querySelector('#menu')
-    .addEventListener('click', function display(e) {
-    const sectionName = e.target.innerHTML.toLowerCase();
-    index = CONTENT.findIndex((el) => el.heading.toLowerCase() === sectionName);
-    setData(index);
+menu.addEventListener('click', (e) => {
+    const sectionName = e.target.innerHTML.toLowerCase(),
+          sectionIndex = CONTENT.findIndex((el) => el.heading.toLowerCase() === sectionName);
+    setData(sectionIndex);
 });
 
 const addAnimation = (element, ...animationOptions) =>
@@ -101,7 +98,7 @@ const setData = (index) => {
     );
 
     setInnerData(period, CONTENT[index].period);
-    if (window.innerWidth > 800) {
+    if (window.innerWidth > SCREEN_WIDTH) {
         updateBackground(
             headerMenu,
             ASSETS_PATH,
@@ -111,7 +108,6 @@ const setData = (index) => {
 };
 
 window.addEventListener('resize', function(e) {
-    const image = document.querySelector('.header');
     if (window.innerWidth <= SCREEN_WIDTH) {
         image.style.backgroundImage = 'none';
     } else {
@@ -128,7 +124,7 @@ window.addEventListener('resize', function(e) {
 const renderContent = (data) => {
     const menu = document.getElementById('menu'),
         listItemClasses = ['menu__item', 'flex', 'center', 'full'];
-    fragment = new DocumentFragment();
+    const fragment = new DocumentFragment();
 
     data.forEach((element) => {
         const listItem = document.createElement('li');
