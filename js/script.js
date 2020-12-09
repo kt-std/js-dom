@@ -33,10 +33,6 @@ const CONTENT = [
     },
 ];
 
-document
-    .querySelector('#menu-btn')
-    .addEventListener('click', () => menu.classList.toggle('visible'));
-
 menu.addEventListener('click', (e) => {
     const sectionName = e.target.innerHTML.toLowerCase(),
           sectionIndex = CONTENT.findIndex((el) => el.heading.toLowerCase() === sectionName);
@@ -120,6 +116,12 @@ window.addEventListener('resize', function(e) {
         );
     }
 });
+
+document
+    .querySelector('#menu-btn')
+    .addEventListener('click', () => menu.classList.toggle('visible'));
+
+
 
 const renderContent = (data) => {
     const menu = document.getElementById('menu'),
